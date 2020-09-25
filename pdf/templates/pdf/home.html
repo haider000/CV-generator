@@ -1,0 +1,95 @@
+{% extends 'pdf/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %} {% block content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Get CV</title>
+
+    <style>
+        #btn_for_form {
+            background-color: #2B072A;
+            border: #2B072A;
+        }
+        
+        #btn_for_form:hover {
+            background-color: #1bbde8;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid " style=" background-color: black !important; color: white; font-family: sans-serif; min-height: 600px;">
+
+        <div class="container-fluid" style="margin-top: 50px; padding-top: 75px; ">
+
+            <div class="row" style="color:white; ">
+                <div class="col-4">
+                    <div class="card" style="background-color:#009879">
+                        <div class="card-body">
+                            <h5 class="card-title">CV For CS/IT Stream</h5>
+                            <p class="card-text">Get your CV now for free , click on Get CV</p>
+
+                            <a href="#" class="btn btn-primary">Get CV</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card" style="background-color:#009879">
+
+                        <div class="card-body">
+                            <h5 class="card-title">CV For Management Stream</h5>
+                            <p class="card-text">Coming Soon!!</p>
+                            <a href="#" class="btn btn-primary">Coming Soon!!</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-4">
+                    <div class="card" style="background-color: #009879;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">CV For Other Engineering Stream</h5>
+                            <p class="card-text">Coming Soon!!</p>
+                            <a href="#" class="btn btn-primary">Coming Soon!!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="container" style=" background-color: black !important; color: white; font-family: sans-serif;  margin-top:10px; padding-top: 20px; ">
+
+            <div class="container" style="padding-top: 50px; ">
+
+                <div class="container" style="background-image: url('{% static '/images/overlay.png' %}');background-image: url('{% static '/images/bg1.jpg' %}'); background-repeat: no-repeat; height:700px;">
+                    <div class="container ">
+                        <h1 style="color: black;">Get Your CV Now</h1>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+{% endblock content%}
+
+</html>

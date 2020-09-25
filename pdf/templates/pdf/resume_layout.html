@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <title>Layout</title>
+
+
+    <style>
+        * {
+            font-family: sans-serif;
+            /* Change your font family */
+        }
+        
+        .linksandcontact {
+            border-collapse: collapse;
+            font-size: 0.9em;
+            min-width: 100%;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .linksandcontact thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .linksandcontact th,
+        .linksandcontact td {
+            padding: 5px 5px;
+        }
+        
+        .linksandcontact tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        .linksandcontact tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .linksandcontact tbody tr:last-of-type {
+            border-bottom: 1px solid #009879;
+        }
+        
+        .linksandcontact tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" style="border-bottom: 5px solid #009879;">
+
+        <div class="row">
+
+            <div class="col-8 " style=" padding-top: 4px;">
+                <div style="background-color: #009879; height: 50%; width:100%; color:white; ">
+
+                    <h1 style="text-align: center; padding-top: 28px; text-decoration: underline; font-weight: bolder;">
+                        {{user.name}}
+                    </h1>
+
+                </div>
+                <div class="container py-3 " style="margin-top: 5px;">
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">Career Objective</h3>
+                    <p>{{user.career_objective}}</p>
+                    <hr/>
+                </div>
+
+            </div>
+
+
+            <div class="col-4" style=" padding-top: 4px;">
+
+
+                <table class="linksandcontact">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th colspan="2">Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                Address
+                            </td>
+                            <td>{{user.address}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Email
+                            </td>
+                            <td><a href="{{user.email}}" title="Go to Email">{{user.email}}</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Phone
+                            </td>
+                            <td>{{user.phone}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Linkedin
+                            </td>
+                            <td><a href="{{user.linkedin}}" title="Go to Linkedin">{{user.linkedin}}</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Github
+                            </td>
+                            <td>
+                                <a href="{{user.github}}" title="Go to Github">{{user.github}}</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Other Links
+                            </td>
+                            <td>
+                                <a href="{{user.other_link}}">{{user.other_link}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-8 py-4">
+
+                <div class="container py-2">
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">
+                        Education
+                    </h3>
+                    <table class="linksandcontact">
+                        <thead>
+
+                            <tr style="text-align: center;">
+                                <th>Course</th>
+                                <th>University/Board</th>
+                                <th>CGPA/Percentage</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>{{user.ug_course_name}}</td>
+                                <td>{{user.university}}</td>
+                                <td>{{user.ug_percentage}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>{{user.diploma_or_12th}}</td>
+                                <td>{{user.school_12th}}</td>
+                                <td>{{user.percentage_12th}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>10th</td>
+                                <td>{{user.school_10th}}</td>
+                                <td>{{user.percentage_10th}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container py-2">
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">
+                        Projects / Work Experience
+                    </h3>
+                    <p>
+                        {{user.work_or_project}}
+                    </p>
+                </div>
+
+
+                <div class="container py-2">
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">
+                        Achievements and Awards
+                    </h3>
+
+                    {% for achi in achievements_list %}
+
+                    <p>{{achi}}</p>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class="col-4 py-4">
+                <div class="container py-2">
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">
+                        Technical Skills
+                    </h3>
+
+                    <ul>
+                        {% for ski in technical_skills_list%}
+                        <li>
+                            {{ski}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+                <div class="container py-2">
+
+                    <h3 style="text-decoration: underline #009879; font-weight: bolder;">
+                        Soft Skills
+                    </h3>
+                    <ul>
+                        {% for sof in soft_skills_list%}
+                        <li>
+                            {{sof}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

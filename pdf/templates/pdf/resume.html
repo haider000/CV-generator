@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+        }
+        
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>{{user_profile.name}}</h2>
+    <h2>{{user_profile.email}}</h2>
+    <h2>{{user_profile.phone}}</h2>
+
+    <hr/>
+    <br/>
+
+    <p>
+        <h3>Summary</h3>
+    </p>
+    <p>{{user_profile.summary}}</p>
+    <hr/>
+
+    <p>
+        <h3>Skills</h3>
+    </p>
+    <p>{{user_profile.skills}}</p>
+    <hr/>
+
+    <p>
+        <h3>Education</h3>
+    </p>
+
+    <table style="width:100%">
+        <tr>
+            <th>Degree/Certificate</th>
+            <th>Board/University</th>
+            <th>Year Of Passing</th>
+            <th>Percentage/CGPA</th>
+        </tr>
+        <tr>
+            <td>{{user_profile.degree}}</td>
+            <td>{{user_profile.university}}</td>
+            <td>2021</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+    <p>
+        <h3>Work Experience</h3>
+    </p>
+    <p>{{user_profile.previous_work}}</p>
+    <hr/>
+
+
+</body>
+
+</html>
